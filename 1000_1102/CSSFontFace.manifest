@@ -1,6 +1,5 @@
 CACHE MANIFEST
 # Offline Cache
-CSSFontFace.manifest
 index.html
 includes/script.js
 includes/style.css
@@ -11,7 +10,6 @@ src/misc.js
 src/netctrl.js
 src/payload.bin
 src/fancontrol.bin
-src/utils.mjs
 src/worker.js
 src/workers.js
 src/ps4/constants.js
