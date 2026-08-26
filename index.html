@@ -72,16 +72,22 @@
                         setTimeout(() => {
                             window.location.href = "505_960/index.html";
                         }, 1000);
-                    } 
+                    }
                     else if (firmware >= 10.00 && firmware <= 11.02) {
                         resultElement.innerText += "";
                         setTimeout(() => {
                             window.location.href = "1000_1102/index.html";
                         }, 1000);
                     } 
+                    else if (firmware >= 11.50 && firmware <= 13.00) {
+                        resultElement.innerText += "";
+                        setTimeout(() => {
+                            window.location.href = "1150-1300/index.html";
+                        }, 1000);
+                    }
                     else {
                         resultElement.className = "status error";
-                        resultElement.innerText = `PS4 FW ${firmware.toFixed(2)} belum support, namun Anda bisa pakai BD-JB, beli di id.shp.ee/czwbVnLh`;
+                        resultElement.innerText = `PS4 FW ${firmware.toFixed(2)} belum support.`;
                     }
                 } else {
                     resultElement.className = "status error";
