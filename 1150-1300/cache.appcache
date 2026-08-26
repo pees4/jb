@@ -21,8 +21,3 @@ patches/1300.bin
 
 NETWORK:
 *
-
-FALLBACK:
-index.html index.html
-run_lapse.html run_lapse.html
-run_poops.html run_poops.html
