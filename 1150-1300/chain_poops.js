@@ -172,19 +172,7 @@ let allDone = false;
               + (payload[0] === 0xe9 ? "e9-jmp-rel32" : "NOT-e9")
             : "MISSING");
 
-        setTimeout(async () => {
-            try {
-                const rFan = await fetch("fancontrol.bin");
-                if (rFan.ok) {
-                    const fanPayload = new Uint8Array(await rFan.arrayBuffer());
-                    mark("FANCONTROL-BLOB", "bytes=" + fanPayload.length);
-                }
-            } catch (e) { 
-                mark("FANCONTROL-FETCH-THREW", e.message); 
-            }
-        }, 3000);
-		
-		("running the primitive...", "warn");
+        state("running the primitive...", "warn");
         await new Promise(r => setTimeout(r, 0));
 
         const PRIMITIVE_LOUD = /FAIL|ERROR|THREW|RETRY|ABORT|PASS/i;

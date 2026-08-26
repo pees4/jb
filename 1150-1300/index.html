@@ -8,22 +8,21 @@
   html, body { margin:0; padding:0; background:#0b0d10; color:#c8ced8;
                font:15px/1.45 "Segoe UI", system-ui, sans-serif; }
   #wrap { padding:16px 18px; }
-  #state { font-size:22px; font-weight:700; margin:0 0 6px; }
-  #det { font-size:13px; color:#8b95a3; margin:0 0 4px; }
+  #state { font-size:44px; font-weight:700; margin:0 0 6px; }
+  #det { font-size:26px; color:#8b95a3; margin:0 0 4px; }
   #det b { color:#c8ced8; font-weight:600; }
-  #cache { font-size:12px; color:#5c6672; margin:0 0 10px; min-height:14px; }
+  #cache { font-size:24px; color:#5c6672; margin:0 0 10px; min-height:14px; }
   #cache.cacheok { color:#7fd0a0; }
   .ok { color:#7fd0a0; } .bad { color:#d08a7f; } .warn { color:#d8c07f; }
   #brand { text-align:center; padding:8px 10px; background:#0e1116;
            border-bottom:1px solid #1e2732; }
   #brand img { width:28px; height:28px; margin-right:8px; border-radius:50%;
                vertical-align:middle; }
-  #brand b { font-size:15px; font-weight:700; letter-spacing:.14em;
+  #brand b { font-size:30px; font-weight:700; letter-spacing:.14em;
              color:#e6ebf2; vertical-align:middle; }
 </style>
 </head>
 <body>
-<!-- <div id="brand"><img src="logo_raw.png" alt="" width="28" height="28"><b>RAW GAME</b></div> -->
 <div id="wrap">
   <div id="state">detecting firmware...</div>
   <div id="det"></div>
@@ -94,7 +93,7 @@
     } else if (ac.status === ac.UPDATEREADY) {
         try { ac.swapCache(); } catch (e) {}
         setCache("update downloaded", true);
-        waitForTap("UPDATE READY -- press X or tap to reload & run",
+        waitForTap("UPDATE READY -- Tekan tombol Enter  X/O",
                    function () { location.reload(); });
     } else {
         setCache("checking cache...");
@@ -107,12 +106,12 @@
 
         ac.addEventListener("cached", function () {
             setCache("cached for offline use", true);
-            waitForTap("CACHED (first run) -- press X or tap to run", go);
+            waitForTap("CACHED (first run) -- Tekan tombol Enter  X/O", go);
         }, false);
         ac.addEventListener("updateready", function () {
             try { ac.swapCache(); } catch (e) {}
             setCache("update downloaded", true);
-            waitForTap("UPDATE READY -- press X or tap to reload & run",
+            waitForTap("UPDATE READY -- Tekan tombol Enter  X/O",
                        function () { location.reload(); });
         }, false);
 
@@ -122,11 +121,11 @@
         }, false);
         ac.addEventListener("error", function () {
             setCache("cache unavailable");
-            waitForTap("CACHE FAILED -- press X or tap to run anyway", go);
+            waitForTap("CACHE FAILED -- Tekan tombol Enter  X/O", go);
         }, false);
         ac.addEventListener("obsolete", function () {
             setCache("cache obsolete");
-            waitForTap("CACHE OBSOLETE -- press X or tap to run", go);
+            waitForTap("CACHE OBSOLETE -- Tekan tombol Enter  X/O", go);
         }, false);
     }
 })();

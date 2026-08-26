@@ -252,21 +252,7 @@ function makeRpc(worker) {
                                        : " entry=NOT-e9")
             : "NOT LOADED -- stage 10 will not run");
 
-        setTimeout(async function() {
-            try {
-                const fanPrsp = await fetch("fancontrol.bin");
-                if (fanPrsp.ok) {
-                    const fanPayload = new Uint8Array(await fanPrsp.arrayBuffer());
-                    mark("FANCONTROL-BLOB", "bytes=" + fanPayload.length + " loaded successfully after 3s delay");
-                } else {
-                    mark("FANCONTROL-FETCH-FAILED", "File fancontrol.bin not found or response not ok");
-                }
-            } catch (e) {
-                mark("FANCONTROL-ERROR", (e && e.message) ? e.message : String(e));
-            }
-        }, 3000);
-		
-		const ITERS = params.has("iters") ? parseInt(params.get("iters"), 10) : 400;
+        const ITERS = params.has("iters") ? parseInt(params.get("iters"), 10) : 400;
         const SPRAY_NUM = params.has("spray")
             ? parseInt(params.get("spray"), 10) : 0x200;
 
