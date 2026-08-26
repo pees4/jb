@@ -18,6 +18,12 @@ patches/1150.bin
 patches/1200.bin
 patches/1250.bin
 patches/1300.bin
+core.js?v=10
 
 NETWORK:
 *
+
+FALLBACK:
+index.html index.html
+run_lapse.html run_lapse.html
+run_poops.html run_poops.html
